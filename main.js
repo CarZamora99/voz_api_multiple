@@ -1,3 +1,4 @@
+
 const searchForm = document.querySelector("#search-form");
 const searchFormInput = searchForm.querySelector("input"); // <=> document.querySelector("#search-form input");
 const info = document.querySelector(".info");
@@ -12,7 +13,7 @@ if(SpeechRecognition) {
   recognition.continuous = true;
   recognition.lang = "es-MX";
 
-  searchForm.insertAdjacentHTML("beforeend", '<button type="button"><i class="fas fa-microphone"></i></button>');
+  searchForm.insertAdjacentHTML("beforeend", '<button type="button" ><i class="fas fa-microphone"></i></button>');
   searchFormInput.style.paddingRight = "50px";
 
   const micBtn = searchForm.querySelector("button");
@@ -68,15 +69,14 @@ if(SpeechRecognition) {
       else if(transcript.toLowerCase().trim()==="salir del sitio") {
              
       var mensaje;
-      var opcion = confirm("Para salir dar clic en aceptar");
+      var opcion = confirm("¿Seguro que quieres salir?");
      
       if (opcion == true) { 
          window.close();     
          recognition.stop();
     } else {
-        mensaje = "Has clickado Cancelar";
+        mensaje = "No";
     }
-    document.getElementById("ejemplo").innerHTML = mensaje;
 
       }
       else if(transcript.toLowerCase().trim()==="tienda") {
@@ -114,9 +114,3 @@ else {
   info.textContent = "Your Browser does not support Speech Recognition";
 }
 
-   
-function close_window() {
-  if (confirm("¿Seguro que quieres salir?")) {
-    this.close();
-  }
-}
