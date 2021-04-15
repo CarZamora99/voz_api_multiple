@@ -50,7 +50,7 @@ if(SpeechRecognition) {
     const transcript = event.results[current][0].transcript;
     //ayuda
     if(transcript.toLowerCase().trim()==="ayuda del sitio") {
-      window.open('ayuda.php', '__blank');
+      window.open('ayuda.html', '__blank');
     }
     else if(!searchFormInput.value) {
       searchFormInput.value = transcript;
